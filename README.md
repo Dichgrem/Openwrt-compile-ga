@@ -6,12 +6,6 @@
 
 预置机型有小米4A千兆版、小米CR6606、红米AX6S等，详见`preset*/headers.json`。
 
-**快速生成固件 ---> 登陆GitHub，fork此仓库，点击上方`Actions`，选择左侧流程中的`build XXX`运行，运行完毕即可下载固件。示意如下：**
-
-<img src="extra-files/images/action_running.gif" width="70%" ></img>
-
-选择机型：在run workflow界面点开`选择设备`的下拉框，即可手动选择机型。
-
 如预置机型中没有你需要的，可使用[templet](templet)目录下的文件新增机型。
 
 ## 使用教程
