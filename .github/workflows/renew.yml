@@ -1,4 +1,4 @@
-name: renew
+qname: renew
 
 on:
   workflow_dispatch:
