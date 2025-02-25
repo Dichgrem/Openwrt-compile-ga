@@ -116,7 +116,7 @@ Actions流程顺利完成后，去release(或者artifact)下载你的固件，re
 
 </details>
 
-## preset*目录说明
+## preset目录说明
 
 <details>
   
