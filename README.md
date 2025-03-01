@@ -38,9 +38,7 @@
 
 此脚本用于固件初始化设置，修改登录IP、主机名、WiFi名称等。
 
-此脚本用到最多的命令是sed，详细用法参见[链接](https://www.runoob.com/linux/linux-comm-sed.html)，这里只简单说明。
-
-比如，下面这条命令就是用来修改管理IP的：
+sed命令示例：下面这条命令用来修改管理IP：
 
 `sed -i 's/192.168.1.1/192.168.31.1/g' package/base-files/files/bin/config_generate`
 
@@ -53,8 +51,6 @@
 这就可以用来替换掉源码中的特定位置，-i指直接改动文件，s指替换，g指全局。
 
 原字符串记为str1，新字符串记为str2，自定义设置改动str2位置即可，如果你改动了str1，那么命令在源码中就匹配不到东西了，替换也就无效了。
-
->🎈🎈🎈 各基础命令的用法可参考该[链接](https://github.com/danshui-git/shuoming/blob/master/ming.md)，适合新手查阅。
 
 - [数字].config
 
@@ -96,15 +92,11 @@
 
 - 上传到release:
 
-默认勾选。单文件不能超过2GB，可添加内容记录。 release区见下图：
-
-<img src="extra-files/images/release_zone.png" width="70%" ></img>
+默认勾选。单文件不能超过2GB，可添加内容记录。
 
 - 上传到artifact:
 
-默认不勾选。artifact区见下图：
-
-<img src="extra-files/images/artifact_zone.png" width="70%" ></img>
+默认不勾选。
 
 - 版本描述:
 
@@ -121,8 +113,6 @@ Actions流程顺利完成后，去release(或者artifact)下载你的固件，re
 <details>
   
   <summary>点击展开/关闭</summary>
-
-全部机型信息可查看文件`preset*/headers.json`，各配置目录略有不同，如[preset-openwrt/headers.json](preset-openwrt/headers.json)。
 
 ### config说明
 - 1.config用于小闪存设备（16MB及以下）
