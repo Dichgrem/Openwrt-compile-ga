@@ -1,12 +1,8 @@
 # 使用 GitHub Actions 快速定制编译 OpenWrt 固件
 
-流程文档参考[KFERMercer/OpenWrt-CI](https://github.com/KFERMercer/OpenWrt-CI)，十分感谢！
-
 使用的固件源码包括openwrt官方，以及coolsnowwolf、Lienol、immortalwrt、x-wrt维护的版本，详见[表格](#固件源码)。
 
-预置机型有小米4A千兆版、小米CR6606、红米AX6S等，详见`preset*/headers.json`。
-
-如预置机型中没有你需要的，可使用[templet](templet)目录下的文件新增机型。
+预置机型有小米4A千兆版、小米CR6606、红米AX6S等,如预置机型中没有你需要的，可使用[templet](templet)目录下的文件新增机型。
 
 ## 使用教程
 
@@ -234,23 +230,24 @@ Actions流程顺利完成后，去release(或者artifact)下载你的固件，re
 1. 小米4A千兆版和小米3Gv2闪存小(仅16MB)，若编译插件太多，包体积超出闪存上限，则不会生成sysupgrade.bin。
 
 ---
+## 常用sed命令
 
-### Modify default IP
+- ### Modify default IP
 ```
 sed -i 's/192.168.1.1/192.168.2.1/g' package/base-files/files/bin/config_generate
 ```
 
 
-### Modify default theme
+- ### Modify default theme
 ```
 sed -i "s/luci-theme-bootstrap/luci-theme-argon/g" feeds/luci/collections/luci/Makefile
 ```
 
-### Modify hostname
+- ### Modify hostname
 ```
 sed -i '/uci commit system/i\uci set system.@system[0].hostname='OpenWrt'' package/lean/default-settings/files/zzz-default-settings
 ```
-### 加入编译者信息
+- ### 加入编译者信息
 ```
 sed -i "s/OpenWrt /smith build $(TZ=UTC-8 date "+%Y.%m.%d") @ OpenWrt /g" package/lean/default-settings/files/zzz-default-settings
 ```
@@ -258,3 +255,12 @@ sed -i "s/OpenWrt /smith build $(TZ=UTC-8 date "+%Y.%m.%d") @ OpenWrt /g" packag
 ### 总结
 
 **源码 -- 机型 -- 版本 -- 插件/主题 -- 配置（IP/密码/Hostname/编译者）**
+
+## **感谢以下项目**:
+
+- [P3TERX/Actions-OpenWrt](https://github.com/P3TERX/Actions-OpenWrt)
+
+- [KFERMercer/OpenWrt-CI](https://github.com/KFERMercer/OpenWrt-CI)
+
+- [hugcabbage/shared-lede](https://github.com/hugcabbage/shared-lede)
+
