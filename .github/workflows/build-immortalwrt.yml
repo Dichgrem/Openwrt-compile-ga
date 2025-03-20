@@ -52,6 +52,7 @@ on:
           - 'xiaomi-4c'
           - 'miwifi-3c'
           - 'x86'
+          - 'qihoo_360t7-ubootmod'
           - 'Nokia-EA0326GMP'
           - 'miwifi-nano'
       branch:
